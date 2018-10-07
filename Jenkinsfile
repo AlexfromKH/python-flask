@@ -7,6 +7,7 @@ pipeline {
   }
     parameters {
     string(name: 'NODE_NAME', defaultValue: 'sony-host', description: '')
+    string (name: 'WORKING_DIRECTORY', defaultValue: '/home/alexst/dev/python/test-dev-py', deskription: '')
     string(name: 'IMAGE_REPO_NAME', defaultValue: 'alexfromkh/flask-app', description: '')
     string(name: 'LATEST_BUILD_TAG', defaultValue: 'build-latest', description: '')
     string(name: 'DOCKER_COMPOSE_FILENAME', defaultValue: 'docker-compose.yml', description: '')
@@ -15,7 +16,10 @@ pipeline {
   stages { 
     stage('stop a docker-compose'){
       steps{
-	      sh "docker-compose down"
+	      dir('$WORKING_DIRECTORY') {
+		sh "pwd"
+	      	sh "docker-compose down"
+	      }
       }
     }
     stage('rebuild an image'){
