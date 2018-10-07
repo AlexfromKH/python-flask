@@ -1,12 +1,11 @@
 pipeline {
   agent {
-    label '$NODE_NAME'
+    label 'sony-host'
   }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
     parameters {
-    string(name: 'NODE_NAME', defaultValue: 'sony-host', description: '')
     string(name: 'WORKING_DIRECTORY', defaultValue: '/home/alexst/dev/python/test-dev-py', description: '')
     string(name: 'IMAGE_REPO_NAME', defaultValue: 'alexfromkh/flask-app', description: '')
     string(name: 'LATEST_BUILD_TAG', defaultValue: 'build-latest', description: '')
