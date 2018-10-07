@@ -11,10 +11,10 @@ pipeline {
     stages { 
       stage('stop a docker-compose'){
         steps{
-            dir("${params.WORKING_DIRECTORY}") {
-	    sh "hostnamectl"
-	    sh "pwd"
-          }
+            dir('${params.WORKING_DIRECTORY}') {
+	      sh "hostnamectl"
+	      sh "pwd"
+            }
         }
       
     }
