@@ -16,6 +16,7 @@ pipeline {
     stage('stop a docker-compose'){
       steps{
 	      dir('$WORKING_DIRECTORY') {
+		sh "hostnamectl"
 		sh "pwd"
 	      	sh "docker-compose down"
 	      }
