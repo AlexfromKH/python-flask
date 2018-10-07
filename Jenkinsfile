@@ -9,7 +9,7 @@ pipeline {
     stages { 
       stage('stop a docker-compose'){
         steps{
-	  dir('/tmp'){	      
+	  dir("/tmp"){	      
 	    sh "pwd"
           }
         }
