@@ -11,8 +11,6 @@ pipeline {
         steps{
 	  dir('/tmp'){	      
 	    sh "pwd"
-	    sh "hostnamectl"
-	    sh "touch test"
           }
         }
       
