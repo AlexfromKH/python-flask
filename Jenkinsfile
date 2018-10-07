@@ -15,7 +15,7 @@ pipeline {
   stages { 
     stage('stop a docker-compose'){
       steps{
-	      dir '/home/alexst/dev/python/test-dev-py' {
+	      dir('/home/alexst/dev/python/test-dev-py') {
 		sh "hostnamectl"
 		sh "pwd"
 	      	sh "docker-compose down"
