@@ -12,15 +12,14 @@ pipeline {
     string(name: 'DOCKER_COMPOSE_FILENAME', defaultValue: 'docker-compose.yml', description: '')
     booleanParam(name: 'PUSH_DOCKER_IMAGES', defaultValue: true, description: '')
    }
-  stages { 
-    stage('stop a docker-compose'){
-      steps{
+   stages { 
+     stage('stop a docker-compose'){
+       steps{
 	      dir("$WORKING_DIRECTORY") {
 		sh "hostnamectl"
 		sh "pwd"
-	      	sh "docker-compose down"
 	      }
-      }
+       }
     }
     stage('rebuild an image'){
       steps{
@@ -32,5 +31,4 @@ pipeline {
 	      sh "docker-compose up -d"
       }
     }
-  }
 }
