@@ -9,9 +9,9 @@ pipeline {
     stages { 
       stage('stop a docker-compose'){
         steps{
-          sh "pwd"
-	  dir('/tmp/'){	      
-	    sh "pwd"
+          sh 'pwd'
+	  dir('/home/alexst/dev/python/test-dev-py'){	      
+	    sh 'pwd'
           }
         }
       
