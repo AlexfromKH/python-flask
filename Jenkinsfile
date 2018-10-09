@@ -9,19 +9,20 @@ pipeline {
     stage('stop a docker-compose'){
       steps{
         sh 'pwd'
-	sh 'whoami'
-	sh 'docker -v'
-	sh 'docker ps'
+	      sh 'whoami'
+	      sh 'docker -v'
+	      sh 'docker ps'
 //        dir('/home/alexst/dev/python/test-dev-py'){	      
-//	  sh 'pwd'
+//	      sh 'pwd'
 //        }
       } 
+    }
     stage('rebuild docker-compose'){
       steps{
         sh 'pwd'
-//        dir('/home/alexst/dev/python/test-dev-py'){	      
-//	  sh 'pwd'
-//        }
+        dir('/home/alexst/dev/python/test-dev-py'){	      
+	        sh 'pwd'
+        }
       }  
     }  
   }
