@@ -11,7 +11,7 @@ pipeline {
         sh 'pwd'
 	      sh 'whoami'
 	      sh 'docker -v'
-	      sh 'docker ps'
+	      sh 'sudo docker ps'
 //        dir('/home/alexst/dev/python/test-dev-py'){	      
 //	      sh 'pwd'
 //        }
